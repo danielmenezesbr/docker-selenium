@@ -19,6 +19,11 @@ rm -f /tmp/.X*lock
 
 SERVERNUM=$(get_server_num)
 
+sudo apt update
+sudo apt -y upgrade
+sudo apt -y install /home/seluser/GBPCEFwr64.deb
+/usr/local/bin/warsaw/core
+
 DISPLAY=$DISPLAY \
   xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" \
   java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
