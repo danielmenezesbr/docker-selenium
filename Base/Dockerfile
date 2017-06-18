@@ -58,11 +58,9 @@ USER seluser
 #==========
 RUN  sudo mkdir -p /opt/selenium \
   && sudo chown seluser:seluser /opt/selenium \
+  && wget --no-verbose https://cloud.gastecnologia.com.br/cef/warsaw/install/GBPCEFwr64.deb -O /home/seluser/GBPCEFwr64.deb \
+  && sudo chown seluser:seluser /home/seluser/GBPCEFwr64.deb \
   && wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar \
     -O /opt/selenium/selenium-server-standalone.jar
 
-#==========
-# WARSAW
-#==========
-RUN wget https://cloud.gastecnologia.com.br/cef/warsaw/install/GBPCEFwr64.deb -O /home/seluser/GBPCEFwr64.deb \
-  && chmod seluser:seluser /home/seluser/GBPCEFwr64.deb
+RUN echo 1 > /tmp/base_ok
