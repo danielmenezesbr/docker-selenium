@@ -24,6 +24,8 @@ sudo apt -y upgrade
 sudo apt -y install /opt/warsaw/GBPCEFwr64.deb
 /usr/local/bin/warsaw/core
 
+echo 1 > /tmp/entry_point_ok
+
 DISPLAY=$DISPLAY \
   xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" \
   java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
