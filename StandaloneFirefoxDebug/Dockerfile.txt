@@ -1,0 +1,13 @@
+USER seluser
+
+#======================
+# Scripts to run WARSAW
+#======================
+
+RUN  sudo mkdir -p /opt/warsaw \
+  && sudo chown seluser:seluser /opt/warsaw \
+  && wget --no-verbose https://cloud.gastecnologia.com.br/cef/warsaw/install/GBPCEFwr64.deb -O /opt/warsaw/GBPCEFwr64.deb
+
+RUN echo 1 > /tmp/warsaw_ok
+
+EXPOSE 4444
