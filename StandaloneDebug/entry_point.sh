@@ -21,7 +21,7 @@ SERVERNUM=$(get_server_num)
 
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y install /home/seluser/GBPCEFwr64.deb
+sudo apt -y install /opt/warsaw/GBPCEFwr64.deb
 /usr/local/bin/warsaw/core
 
 DISPLAY=$DISPLAY \
