@@ -54,3 +54,5 @@ ENV NODE_APPLICATION_NAME ""
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 CMD ["/opt/bin/entry_point.sh"]
+
+RUN echo 1 > /tmp/node_base_ok
