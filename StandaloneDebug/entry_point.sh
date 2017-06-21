@@ -19,9 +19,14 @@ rm -f /tmp/.X*lock
 
 SERVERNUM=$(get_server_num)
 
-sudo apt update
-sudo apt -y upgrade
-sudo apt -y install /opt/warsaw/GBPCEFwr64.deb
+if [ ! -f /tmp/entry_point_ok ]; then
+   sudo apt update
+   sudo apt -y upgrade
+   sudo apt -y install /opt/warsaw/GBPCEFwr64.deb
+else
+   sudo /etc/init.d/warsaw start
+fi
+
 /usr/local/bin/warsaw/core
 
 echo 1 > /tmp/entry_point_ok
