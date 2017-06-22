@@ -22,7 +22,7 @@ SERVERNUM=$(get_server_num)
 if [ ! -f /tmp/entry_point_ok ]; then
    sudo apt update
    sudo apt -y upgrade
-   sudo apt -y install /opt/warsaw/GBPCEFwr64.deb
+   sudo apt -y install /opt/warsaw/warsaw_setup64.deb
 else
    sudo /etc/init.d/warsaw start
 fi
