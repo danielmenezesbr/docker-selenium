@@ -19,5 +19,5 @@ while (not achou):
 
 driver = webdriver.Remote(
    command_executor='http://localhost:4444/wd/hub',
-   desired_capabilities=DesiredCapabilities.FIREFOX)
-driver.get("https://www2.bancobrasil.com.br/aapf/login.jsp")
+   desired_capabilities=DesiredCapabilities.CHROME)
+driver.get("https://www.itau.com.br")
