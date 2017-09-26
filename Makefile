@@ -1,5 +1,5 @@
 NAME := selenium
-VERSION := $(or $(VERSION),$(VERSION),3.5.3-boron)
+VERSION := $(or $(VERSION),$(VERSION),3.5.3-boron_warsaw)
 NAMESPACE := $(or $(NAMESPACE),$(NAMESPACE),$(NAME))
 AUTHORS := $(or $(AUTHORS),$(AUTHORS),SeleniumHQ)
 PLATFORM := $(shell uname -s)
@@ -8,7 +8,8 @@ MAJOR := $(word 1,$(subst ., ,$(VERSION)))
 MINOR := $(word 2,$(subst ., ,$(VERSION)))
 MAJOR_MINOR_PATCH := $(word 1,$(subst -, ,$(VERSION)))
 
-all: hub chrome firefox phantomjs chrome_debug firefox_debug standalone_chrome standalone_firefox standalone_chrome_debug standalone_firefox_debug
+#all: hub chrome firefox phantomjs chrome_debug firefox_debug standalone_chrome standalone_firefox standalone_chrome_debug standalone_firefox_debug
+all: chrome_debug standalone_chrome_debug
 
 generate_all:	\
 	generate_hub \

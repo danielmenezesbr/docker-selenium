@@ -12,4 +12,10 @@ USER seluser
 #====================================
 COPY entry_point.sh /opt/bin/entry_point.sh
 
+RUN  sudo mkdir -p /opt/warsaw \
+  && sudo chown seluser:seluser /opt/warsaw \
+  && wget --no-verbose https://cloud.gastecnologia.com.br/bb/downloads/ws/warsaw_setup64.deb -O /opt/warsaw/warsaw_setup64.deb
+
+RUN echo 1 > /tmp/standalone_ok
+
 EXPOSE 4444

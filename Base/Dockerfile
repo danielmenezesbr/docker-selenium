@@ -22,6 +22,8 @@ RUN apt-get -qqy update \
     ca-certificates \
     openjdk-8-jre-headless \
     tzdata \
+    openssl \
+    libnss3-tools \
     sudo \
     unzip \
     wget \
