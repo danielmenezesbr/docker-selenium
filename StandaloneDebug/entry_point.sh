@@ -19,6 +19,18 @@ rm -f /tmp/.X*lock
 
 SERVERNUM=$(get_server_num)
 
+if [ ! -f /tmp/entry_point_ok ]; then
+   sudo apt update
+   sudo apt -y upgrade
+   sudo apt -y install /opt/warsaw/warsaw_setup64.deb
+else
+   sudo /etc/init.d/warsaw start
+fi
+
+/usr/local/bin/warsaw/core
+
+echo 1 > /tmp/entry_point_ok
+
 DISPLAY=$DISPLAY \
   xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" \
   java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
